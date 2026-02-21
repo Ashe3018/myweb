@@ -80,7 +80,7 @@ const About = () => {
     </div>
 
     {/* TEAM GRID (Optional) */}
-    <div className="text-center">
+    {/* <div className="text-center">
       <h2 className="text-2xl md:text-3xl font-semibold text-slate-800 mb-6">
         Meet the Team
       </h2>
@@ -103,7 +103,7 @@ const About = () => {
           <p className="text-gray-500 text-sm">COO</p>
         </div>
       </div>
-    </div>
+    </div> */}
 
   </div>
 </div>

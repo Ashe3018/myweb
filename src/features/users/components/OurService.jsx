@@ -95,40 +95,8 @@ const OurService = () => {
   </div>
 
   {/* Bottom Custom Software Banner – FULL WIDTH */}
-<div className="max-w-7xl mx-auto mt-8 bg-white rounded-2xl shadow p-6">
-  <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6">
 
-    {/* IMAGE (LEFT) */}
-    <div className="flex justify-center md:justify-start">
-      <img
-        src="/images/mn.png"
-        alt="Custom Software"
-        className="h-12"
-      />
-    </div>
 
-    {/* TEXT (CENTER) */}
-    <div className="text-center">
-      <h4 className="font-semibold text-slate-800">
-        Custom Software
-      </h4>
-      <p className="text-gray-500 text-sm">
-        Tailored systems based on your business needs.
-      </p>
-    </div>
-
-    {/* BUTTON (RIGHT) */}
-    <div className="flex justify-center md:justify-end">
-      <button
-        onClick={() => navigate("/contact_us")}
-        className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-      >
-        Contact Us
-      </button>
-    </div>
-
-  </div>
-</div>
 </div>
   );
 };

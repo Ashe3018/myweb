@@ -5,6 +5,7 @@ import Compayn from "../components/Compayn";
 import ContactUs from "../components/ContactUs";
 import FirstPage from "../components/FirstPage";
 import About from "../components/About";
+import BurgerMenu from "../components/BurgerMenu";
 import { useLocation } from "react-router-dom";
 import useCRUD from "../hooks/useCRUD";
 const ProductPage = () => {
@@ -46,6 +47,7 @@ const ProductPage = () => {
 <div id="Company">
         <Compayn />
       </div>
+ 
   <div id="contactUs">
         <ContactUs />
       </div>
