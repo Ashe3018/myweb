@@ -1,75 +1,26 @@
-import { useState ,React} from "react";
+import React from "react";
 import ProductGrid from "../components/ProductGrid";
 import { useLocation,useNavigate } from "react-router-dom";
 import useCRUD from "../hooks/useCRUD";
-
 const OurService = () => {
   const nav = useLocation();
    const navigate = useNavigate();
   const { datas } = useCRUD(
     "https://www.ayu.server.ayubceramic.com/product",nav.pathname
   );
-  const mensCloths = [
-  { id: 1, image: "/images/we1.jpg", title: "Habesha Kemis" },
-  { id: 2, image: "/images/we2.jpg", title: "Traditional Gabi" },
-  { id: 3, image: "/images/we3.jpg", title: "Cultural Outfit" },
-  { id: 4, image: "/images/we4.png", title: "Handwoven Cloth" },
-  { id: 5, image: "/images/we5.png", title: "Modern Habesha" },
-  { id: 6, image: "/images/we6.png", title: "Wedding Wear" },
-  { id: 7, image: "/images/we7.png", title: "Classic Kemis" },
-  { id: 8, image: "/images/we8.png", title: "Elegant Gabi" },
-  { id: 9, image: "/images/we9.png", title: "Cultural Style" },
-  { id: 10, image: "/images/ss.png", title: "Premium Habesha" },
-];
- const [showAll, setShowAll] = useState(false);
-
-  const displayedItems = showAll ? mensCloths : mensCloths.slice(0, 8);
   
   return (
-    <div className="relative py-12 px-4 sm:px-6 lg:px-8 bg-gray-50 overflow-hidden">
-      
-      {/* Section Header */}
-      <div className=" text-center mb-14">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800">
-          Men’s Cultural Cloths
-        </h2>
-        <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
-          Authentic Habesha traditional wear crafted with heritage and elegance.
-        </p>
-      </div>
-
-      {/* Grid */}
-   <div className=" max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8">
-  {displayedItems.map((item) => (
-  <div
-  key={item.id}
-  onClick={() => navigate(`/product/${item.id}`)}
-  className="
-    group cursor-pointer
-    bg-white rounded-2xl
-    shadow hover:shadow-xl transition
-    overflow-hidden flex flex-col
-    border-b-2 border-amber-700
-    h-[300px]
-  "
->
-  {/* IMAGE AREA (FIXED HEIGHT) */}
-  <div className="h-64 w-full flex items-center justify-center bg-gray-50">
-    <img
-      src={item.image}
-      alt={item.title}
-      className="
-        max-h-full
-        max-w-full
-        object-contain
-        transition-transform
-        duration-500
-        group-hover:scale-105
-      "
-    />
+      <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+  {/* Header */}
+  <div className="text-center mb-14">
+    <h2 className="text-3xl md:text-4xl font-bold text-slate-800">
+      Our Services
+    </h2>
+    <p className="text-gray-500 mt-2 max-w-2xl mx-auto">
+      Practical digital solutions <span className="font-semibold">tailored</span> for your business.
+    </p>
   </div>
 
-<<<<<<< HEAD
   {/* Services Grid – FULL WIDTH */}
   <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -144,45 +95,41 @@ const OurService = () => {
   </div>
 
   {/* Bottom Custom Software Banner – FULL WIDTH */}
+<div className="max-w-7xl mx-auto mt-8 bg-white rounded-2xl shadow p-6">
+  <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6">
 
+    {/* IMAGE (LEFT) */}
+    <div className="flex justify-center md:justify-start">
+      <img
+        src="/images/mn.png"
+        alt="Custom Software"
+        className="h-12"
+      />
+    </div>
 
-=======
-  {/* TITLE (FIXED AT BOTTOM) */}
-  <div className="h-20 flex items-center justify-center px-4 border-t border-amber-100">
-    <h3 className="font-semibold text-slate-800 text-sm md:text-base text-center">
-      {item.title}
-    </h3>
+    {/* TEXT (CENTER) */}
+    <div className="text-center">
+      <h4 className="font-semibold text-slate-800">
+        Custom Software
+      </h4>
+      <p className="text-gray-500 text-sm">
+        Tailored systems based on your business needs.
+      </p>
+    </div>
+
+    {/* BUTTON (RIGHT) */}
+    <div className="flex justify-center md:justify-end">
+      <button
+        onClick={() => navigate("/contact_us")}
+        className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+      >
+        Contact Us
+      </button>
+    </div>
+
   </div>
 </div>
-    
-  ))}
->>>>>>> 86a1311dfe48e8db7c35c522bf7b4f2a7b28ad51
 </div>
-
-      {/* View More / View Less Button */}
-      {mensCloths.length > 9 && (
-        <div className="mt-12 text-center">
-          {!showAll ? (
-            <button
-              onClick={() => setShowAll(true)}
-              className="bg-amber-700 text-white px-10 py-3 rounded-lg
-              hover:bg-amber-800 transition font-semibold tracking-wide shadow-lg"
-            >
-              View More
-            </button>
-          ) : (
-            <button
-              onClick={() => setShowAll(false)}
-              className="bg-gray-300 text-gray-800 px-10 py-3 rounded-lg
-              hover:bg-gray-400 transition font-semibold tracking-wide shadow-lg"
-            >
-              View Less
-            </button>
-          )}
-        </div>
-      )}
-    </div>
-   
   );
 };
 
